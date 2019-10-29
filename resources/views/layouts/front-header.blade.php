@@ -1,0 +1,83 @@
+<!-- ******HEADER****** -->
+<header class="header">
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <ul class="social-icons col-md-6 col-12 d-none d-md-block">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li class="row-end"><a href="#"><i class="fas fa-rss"></i></a></li>
+                </ul><!--//social-icons-->
+                <form class="col-md-6 col-12 search-form" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search the site...">
+                    </div>
+                    <button type="submit" class="btn btn-theme">Go</button>
+                </form>
+            </div><!--//row-->
+        </div>
+    </div><!--//to-bar-->
+    <div class="header-main container">
+        <div class="row">
+            <h1 class="logo col-md-4 col-12">
+                <a href="index.html"><img id="logo" class="w-100" src="{{asset('front/assets/images/logo.png')}}" alt="Logo"></a>
+            </h1><!--//logo-->
+            <div class="info col-md-8 col-12">
+                <ul class="menu-top float-right d-none d-md-block">
+                    <li class="divider"><a href="index.html">Home</a></li>
+                    <li class="divider"><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul><!--//menu-top-->
+                <br/>
+                <div class="contact float-right">
+                    <p class="phone"><i class="fas fa-phone"></i>Call us today 078 654 923</p>
+                    <p class="email"><i class="fas fa-envelope"></i><a href="#">contact@mcu.edu.kh</a></p>
+                </div><!--//contact-->
+            </div><!--//info-->
+        </div><!--//row-->
+    </div><!--//header-main-->
+</header><!--//header-->
+
+<!-- ******NAV****** -->
+<div class="main-nav-wrapper">
+    <div class="container">
+        <nav class="main-nav navbar navbar-expand-md" role="navigation">
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                    data-target="#navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button><!--//nav-toggle-->
+
+            <div class="navbar-collapse collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a class="active nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">News</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-1" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <i
+                                    class="fas fa-angle-down"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="course-single.html">Agriculture and Food Processing</a>
+                            <a class="dropdown-item" href="course-single-2.html">Management and Tourism</a>
+                            <a class="dropdown-item" href="course-single-2.html">Humanity, Art and Languages</a>
+                            <a class="dropdown-item" href="course-single-2.html">Science and Technology</a>
+                        </div><!--//dropdown-menu-->
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">MCU History</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Founder</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Event</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Forum</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Video</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Teacher</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Contact</a></li>
+                </ul><!--//nav-->
+            </div><!--//navabr-collapse-->
+
+        </nav><!--//main-nav-->
+    </div><!--//container-->
+</div><!--//main-nav-container-->
