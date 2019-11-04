@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6899f32c56c4e4905356ff577bf4efb7",
+    "content-hash": "d06981ac9187093bcb3d9fbceacced97",
     "packages": [
         {
             "name": "devdojo/chatter",
@@ -1322,41 +1322,6 @@
                 "serialize"
             ],
             "time": "2019-10-19T18:38:51+00:00"
-        },
-        {
-            "name": "optix/youtube-url-parser",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/optixsolutions/youtube-url-parser.git",
-                "reference": "5a360113f3edecb1a606c06e9bfaf08187affb8b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/optixsolutions/youtube-url-parser/zipball/5a360113f3edecb1a606c06e9bfaf08187affb8b",
-                "reference": "5a360113f3edecb1a606c06e9bfaf08187affb8b",
-                "shasum": ""
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Optix\\YoutubeUrlParser\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jack Robertson",
-                    "email": "jack@optixsolutions.co.uk"
-                }
-            ],
-            "time": "2018-10-16T11:46:18+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -5284,7 +5249,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "optix/youtube-url-parser": 20,
         "unisharp/laravel-filemanager": 20
     },
     "prefer-stable": true,

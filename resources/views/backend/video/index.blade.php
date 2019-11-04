@@ -28,30 +28,6 @@
         <!-- Basic card -->
         <div class="row">
             <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-header bg-light header-elements-inline">
-                        <h5 class="card-title">List</h5>
-                        <div class="header-elements">
-                            <div class="list-icons">
-                                <a class="list-icons-item" data-action="collapse"></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="table table-striped" id="event-table">
-                            <thead>
-                            <tr>
-                                <th><i class="icon-menu"></i></th>
-                                <th>#</th>
-                                <th>video</th>
-                                <th>date</th>
-                            </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6">
                 <form class="card" action="{{route('backend.video.store')}}" method="post">
                     <div class="card-header bg-light header-elements-inline">
                         <h5 class="card-title">Add Video</h5>
@@ -75,6 +51,30 @@
                     </div>
                 </form>
             </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header bg-light header-elements-inline">
+                        <h5 class="card-title">List</h5>
+                        <div class="header-elements">
+                            <div class="list-icons">
+                                <a class="list-icons-item" data-action="collapse"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="video-table">
+                            <thead>
+                            <tr>
+                                <th><i class="icon-menu"></i></th>
+                                <th>#</th>
+                                <th>video</th>
+                                <th>date</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- /basic card -->
     </div>
@@ -86,12 +86,6 @@
             /*table*/
             // Setting datatable defaults
             $.extend( $.fn.dataTable.defaults, {
-                autoWidth: false,
-                columnDefs: [{
-                    orderable: false,
-                    width: 100,
-                    targets: [ 5 ]
-                }],
                 dom: '<"datatable-header"fl><"datatable-scroll"t><"datatable-footer"ip>',
                 language: {
                     search: '<span>Filter:</span> _INPUT_',
@@ -109,26 +103,23 @@
             });
 
             // Scrollable datatable
-            $('#event-table').DataTable({
+            $('#video-table').DataTable({
                 autoWidth: true,
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: route('backend.event.list'),
+                    url: route('backend.video.list'),
                     method:'post'
                 },
                 columns: [
                     { data: 'action', name: 'action' ,searchable:false,orderable:false},
                     { data: 'id', name: 'id'},
-                    { data: 'title', name: 'title' },
-                    { data: 'date', name: 'date' },
-                    { data: 'user_id', name: 'user_id' },
-                    { data: 'location', name: 'location' },
-                    { data: 'is_publish', name: 'is_publish' }
+                    { data: 'url', name: 'url' },
+                    { data: 'created_at', name: 'created_at' }
                 ],
-                "order": [[ 1, "asc" ]],
+                "order": [[ 1, "desc" ]],
                 "columnDefs": [
-                    { className: "pl-2", "targets": [ 1,2,3,4] },
+                    { className: "pl-2", "targets": [ 1,2,3] },
                     { className: "text-center", "targets": [0] },
                 ],
             });

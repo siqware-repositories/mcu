@@ -61,10 +61,13 @@ Route::get('/back_end/event-remove/{id}','EventController@remove')->name('backen
 Route::get('/back_end/event/{id}','EventController@is_publish')->name('backend.event.is_publish');
 /*Video Backend*/
 Route::get('/back_end/video','VideoController@index')->name('backend.video.index');
-Route::get('/back_end/video-list','VideoController@list')->name('backend.video.list');
-Route::get('/back_end/video/create','VideoController@create')->name('backend.video.create');
+Route::post('/back_end/video-list','VideoController@list')->name('backend.video.list');
 Route::post('/back_end/video','VideoController@store')->name('backend.video.store');
-Route::get('/back_end/video/{id}/edit','VideoController@edit')->name('backend.video.edit');
-Route::put('/back_end/video/{id}','VideoController@update')->name('backend.video.update');
 Route::get('/back_end/video-remove/{id}','VideoController@remove')->name('backend.video.remove');
-Route::get('/back_end/video/{id}','VideoController@is_publish')->name('backend.video.is_publish');
+/*Gallery Backend*/
+Route::get('/back_end/gallery','GalleryController@index')->name('backend.gallery.index');
+Route::post('/back_end/gallery-list','GalleryController@list')->name('backend.gallery.list');
+Route::post('/back_end/gallery','GalleryController@store')->name('backend.gallery.store');
+Route::get('/back_end/gallery-remove/{id}','GalleryController@remove')->name('backend.gallery.remove');
+
+

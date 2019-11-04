@@ -92,6 +92,24 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('backend.event.index')}}" class="nav-link {{request()->is('back_end/event*')?'active':''}}">
+                        <i class="icon-calendar"></i>
+                        <span>Event</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('backend.video.index')}}" class="nav-link {{request()->is('back_end/video*')?'active':''}}">
+                        <i class="icon-video-camera"></i>
+                        <span>Video</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('backend.gallery.index')}}" class="nav-link {{request()->is('back_end/gallery*')?'active':''}}">
+                        <i class="icon-gallery"></i>
+                        <span>Gallery</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{route('setting.index')}}" class="nav-link {{request()->is('back_end/setting*')?'active':''}}">
                         <i class="icon-cog"></i>
                         <span>Setting</span>
@@ -105,13 +123,10 @@
                     </a>
                 </li>
                 <!-- /main -->
-
             </ul>
         </div>
         <!-- /main navigation -->
-
     </div>
     <!-- /sidebar content -->
-
 </div>
 <!-- /main sidebar -->
