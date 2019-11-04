@@ -19,6 +19,7 @@
                         <a href="{{route('backend.founder.index')}}" class="btn btn-info {{request()->is('back_end/setting-founder')?'active':''}}">Founder</a>
                         <a href="{{route('backend.rector.index')}}" class="btn btn-info {{request()->is('back_end/setting-rector')?'active':''}}">Rector</a>
                         <a href="{{route('backend.corporation.index')}}" class="btn btn-info {{request()->is('back_end/setting-corporation')?'active':''}}">Corporation</a>
+                        <a href="{{route('backend.commitment.index')}}" class="btn btn-info {{request()->is('back_end/setting-commitment')?'active':''}}">Commitment</a>
                     </div>
                 </div>
             </div>
@@ -39,34 +40,28 @@
             </div>
 
             <div class="card-body">
-                {{--<form action="{{route('backend.founder.update',$founder->id)}}" method="post">
+                <form action="{{route('backend.corporation.update',$corporation->id)}}" method="post">
                     @csrf
                     <input type="hidden" name="_method" value="put">
                     <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" name="name" value="{{$founder->name}}" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label>Profile</label>
-                        <input id="profile" type="hidden" name="profile" value="{{$founder->profile}}" class="form-control">
-                        <img id="lfm" data-input="profile" data-preview="lfm"  src="{{$founder->profile}}" class="shadow d-block" style="margin-top:15px;max-height:100px;">
-                    </div>
-                    <div class="form-group">
                         <label>Title</label>
-                        <input type="text" name="title" value="{{$founder->title}}" class="form-control">
+                        <input type="text" name="title" value="{{$corporation->title}}" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label>Content</label>
-                        <textarea name="content" id="example" cols="30" rows="10">{{$founder->content}}</textarea>
+                        <label>Images</label>
+                        <div id="lfm" data-input="lfm" data-preview="lfm" class="py-2">
+                            @foreach($corporation->gallery_detail as $gallery)
+                                <img src="{{$gallery->path}}" class="shadow" style="height: 5rem;">
+                            @endforeach
+                        </div>
                     </div>
                     <div class="form-group">
                         <button class="btn btn-success" type="submit">Save</button>
                     </div>
-                </form>--}}
+                </form>
             </div>
         </div>
         <!-- /basic card -->
-
     </div>
     <!-- /content area -->
 @stop
@@ -87,7 +82,7 @@
                     _token: "{{ csrf_token() }}" // This passes the laravel token with the ajax request.
                 }
             });
-            $('#lfm').filemanager('image');
+            $('#lfm').filemanager('file');
         })
     </script>
 @stop

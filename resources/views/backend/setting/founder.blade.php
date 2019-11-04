@@ -18,6 +18,7 @@
                         <a href="{{route('backend.founder.index')}}" class="btn btn-info {{request()->is('back_end/setting-founder')?'active':''}}">Founder</a>
                         <a href="{{route('backend.rector.index')}}" class="btn btn-info {{request()->is('back_end/setting-rector')?'active':''}}">Rector</a>
                         <a href="{{route('backend.corporation.index')}}" class="btn btn-info {{request()->is('back_end/setting-corporation')?'active':''}}">Corporation</a>
+                        <a href="{{route('backend.commitment.index')}}" class="btn btn-info {{request()->is('back_end/setting-commitment')?'active':''}}">Commitment</a>
                     </div>
                 </div>
             </div>
@@ -47,8 +48,7 @@
                     </div>
                     <div class="form-group">
                         <label>Profile</label>
-                        <input id="profile" type="hidden" name="profile" value="{{$founder->profile}}" class="form-control">
-                        <div id="lfm" data-input="profile" data-preview="lfm"   style="margin-top:15px;max-height:100px;">
+                        <div id="lfm" data-input="lfm" data-preview="lfm" style="margin-top:15px;max-height:100px;">
                             <img src="{{$founder->profile}}" class="shadow d-block" style="height: 5rem;">
                         </div>
                     </div>

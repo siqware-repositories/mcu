@@ -86,6 +86,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('backend.news.index')}}" class="nav-link {{request()->is('back_end/news*')?'active':''}}">
+                        <i class="icon-pencil"></i>
+                        <span>News</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{route('setting.index')}}" class="nav-link {{request()->is('back_end/setting*')?'active':''}}">
                         <i class="icon-cog"></i>
                         <span>Setting</span>

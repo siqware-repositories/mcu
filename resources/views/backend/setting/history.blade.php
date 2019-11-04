@@ -19,6 +19,7 @@
                         <a href="{{route('backend.founder.index')}}" class="btn btn-info {{request()->is('back_end/setting-founder')?'active':''}}">Founder</a>
                         <a href="{{route('backend.rector.index')}}" class="btn btn-info {{request()->is('back_end/setting-rector')?'active':''}}">Rector</a>
                         <a href="{{route('backend.corporation.index')}}" class="btn btn-info {{request()->is('back_end/setting-corporation')?'active':''}}">Corporation</a>
+                        <a href="{{route('backend.commitment.index')}}" class="btn btn-info {{request()->is('back_end/setting-commitment')?'active':''}}">Commitment</a>
                     </div>
                 </div>
             </div>

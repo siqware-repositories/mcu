@@ -5,17 +5,18 @@
 
     this.on('click', function(e) {
       var route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
+      var target_thumb = $('#' + $(this).data('thumb'));
       var target_input = $('#' + $(this).data('input'));
       var target_preview = $('#' + $(this).data('preview'));
       window.open(route_prefix + '?type=' + type, 'FileManager', 'width=900,height=600');
       window.SetUrl = function (items) {
-        var file_path = items.map(function (item) {
-          return item.url;
-        }).join(',');
-
         // set the value of the desired input to image url
-        target_input.val('').val(file_path).trigger('change');
-
+        items.forEach(function (item,index) {
+          target_input.after('<input type="hidden" name="file_path['+index+']" value="'+item.url+'">');
+        });
+        items.forEach(function (item,index) {
+          target_thumb.after('<input type="hidden" name="file_thumb['+index+']" value="'+item.thumb_url+'">');
+        });
         // clear previous preview
         target_preview.html('');
 
