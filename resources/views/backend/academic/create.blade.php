@@ -49,9 +49,24 @@
             </div>
             <div class="card-body">
                 @csrf
-                <div class="form-group">
-                    <label>Faculty</label>
-                    <input type="text" name="faculty" class="form-control">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Degree</label>
+                            <select name="type" class="form-control">
+                                <option value="Bachelor">Bachelor</option>
+                                <option value="Associate">Associate</option>
+                                <option value="Master">Master</option>
+                                <option value="Doctor">Doctor</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label>Faculty</label>
+                            <input type="text" name="faculty" class="form-control">
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Desc</label>

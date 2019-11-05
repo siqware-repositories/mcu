@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Gallery;
 use App\GalleryDetail;
 use App\News;
-use Illuminate\Http\Request;
 
 class FrontGalleryController extends Controller
 {

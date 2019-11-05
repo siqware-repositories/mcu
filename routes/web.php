@@ -28,6 +28,13 @@ Route::get('/event', 'FrontEventController@index')->name('front.event');
 Route::get('/video', 'FrontVideoController@index')->name('front.video');
 Route::get('/gallery', 'FrontGalleryController@index')->name('front.gallery');
 Route::get('/gallery/{id}', 'FrontGalleryController@show')->name('front.gallery.show');
+Route::get('/founder', 'FrontFounderController@index')->name('front.founder');
+Route::get('/about', 'FrontAboutController@index')->name('front.about');
+Route::get('/contact', 'FrontContactController@index')->name('front.contact');
+Route::get('/staff', 'FrontTeacherController@index')->name('front.staff');
+Route::get('/academic', 'FrontAcademicController@index')->name('front.academic');
+Route::post('/academic-add-major/{id}', 'FrontAcademicController@add_major')->name('front.academic.major.add');
+Route::get('/academic/{id}', 'FrontAcademicController@show')->name('front.academic.show');
 /*\Front*/
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/back_end/setting', 'SettingController');
@@ -78,7 +85,7 @@ Route::post('/back_end/testimonial-list','TestimonialController@list')->name('ba
 Route::post('/back_end/testimonial','TestimonialController@store')->name('backend.testimonial.store');
 Route::get('/back_end/testimonial-remove/{id}','TestimonialController@remove')->name('backend.testimonial.remove');
 /*Teacher Backend*/
-Route::get('/back_end/teacher','TeacherController@index')->name('backend.teacher.index');
+Route::get('/back_end/staff','TeacherController@index')->name('backend.teacher.index');
 Route::post('/back_end/teacher-list','TeacherController@list')->name('backend.teacher.list');
 Route::post('/back_end/teacher','TeacherController@store')->name('backend.teacher.store');
 Route::get('/back_end/teacher-remove/{id}','TeacherController@remove')->name('backend.teacher.remove');

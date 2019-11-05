@@ -17,7 +17,7 @@ class CreateTestimonialsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('major');
-            $table->string('content');
+            $table->longText('content');
             $table->string('profile');
             $table->timestamps();
         });

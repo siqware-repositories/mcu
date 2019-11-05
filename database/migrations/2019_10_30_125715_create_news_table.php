@@ -19,7 +19,7 @@ class CreateNewsTable extends Migration
             $table->bigInteger('user_id');
             $table->string('thumb')->default('images/placeholder.png');
             $table->string('title');
-            $table->string('content');
+            $table->longText('content');
             $table->boolean('status')->default(true);
             $table->boolean('is_publish')->default(false);
             $table->timestamps();

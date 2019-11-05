@@ -17,6 +17,7 @@ class CreateAcademicsTable extends Migration
             $table->bigIncrements('id');
             $table->longText('desc');
             $table->string('faculty');
+            $table->string('type');
             $table->string('mission')->default('mission');
             $table->string('vision')->default('vision');
             $table->string('goal')->default('goal');

@@ -39,11 +39,13 @@ class AcademicController extends Controller
         $input = $request->all();
         $request->validate([
             'faculty'=>'required',
-            'desc'=>'required'
+            'desc'=>'required',
+            'type'=>'required'
         ]);
         $insert = DB::table('academics')->insert([
             'faculty'=>$input['faculty'],
             'desc'=>$input['desc'],
+            'type'=>$input['type'],
             'created_at'     => Carbon::now(),
             'updated_at'     => Carbon::now()
         ]);

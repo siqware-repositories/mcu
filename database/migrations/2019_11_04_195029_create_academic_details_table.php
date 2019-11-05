@@ -17,10 +17,6 @@ class CreateAcademicDetailsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('academic_id');
             $table->string('major');
-            $table->bigInteger('course_id');
-            $table->bigInteger('schedule_id');
-            $table->bigInteger('teacher_id');
-            $table->bigInteger('document_id');
             $table->longText('desc');
             $table->timestamps();
         });

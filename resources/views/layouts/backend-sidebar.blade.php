@@ -76,6 +76,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('backend.teacher.index')}}" class="nav-link {{request()->is('back_end/staff*')?'active':''}}">
+                        <i class="icon-people"></i>
+                        <span>Staff</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{route('backend.history.index')}}" class="nav-link {{request()->is('back_end/setting*')?'active':''}}">
                         <i class="icon-cog"></i>
                         <span>Setting</span>

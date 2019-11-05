@@ -18,6 +18,7 @@
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="{{asset('front/assets/plugins/flexslider/flexslider.css')}}">
     <!-- Theme CSS -->
+    @stack('css')
     <link rel="stylesheet" href="{{asset('front/assets/css/theme-1.css')}}">
     <link rel="stylesheet" href="{{asset('front/assets/css/custom.css')}}">
 </head>
@@ -30,6 +31,7 @@
 </div><!--//wrapper-->
 @include('layouts.front-footer')
 <!-- Javascript -->
+@routes
 <script src="{{asset('js/app.js')}}"></script>
 <script type="text/javascript" src="{{asset('front/assets/plugins/back-to-top.js')}}"></script>
 <script type="text/javascript" src="{{asset('front/assets/plugins/flexslider/jquery.flexslider-min.js')}}"></script>
