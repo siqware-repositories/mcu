@@ -17,15 +17,18 @@ use Illuminate\Support\Facades\Route;
 Route::get('/demo', function () {
     return view('filemanager');
 });
-Route::get('/', function () {
-    return view('front.index');
-});
-
 Route::get('/back_end', function () {
     return view('backend.blank');
 });
 Auth::routes();
-
+/*Front*/
+Route::get('/', 'FrontHomeController@index')->name('front.home');
+Route::get('/news', 'FrontNewsController@index')->name('front.news');
+Route::get('/event', 'FrontEventController@index')->name('front.event');
+Route::get('/video', 'FrontVideoController@index')->name('front.video');
+Route::get('/gallery', 'FrontGalleryController@index')->name('front.gallery');
+Route::get('/gallery/{id}', 'FrontGalleryController@show')->name('front.gallery.show');
+/*\Front*/
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/back_end/setting', 'SettingController');
 Route::get('/back_end/setting-rector', 'SettingController@rector_index')->name('backend.rector.index');
@@ -69,5 +72,20 @@ Route::get('/back_end/gallery','GalleryController@index')->name('backend.gallery
 Route::post('/back_end/gallery-list','GalleryController@list')->name('backend.gallery.list');
 Route::post('/back_end/gallery','GalleryController@store')->name('backend.gallery.store');
 Route::get('/back_end/gallery-remove/{id}','GalleryController@remove')->name('backend.gallery.remove');
-
+/*Testimonial Backend*/
+Route::get('/back_end/testimonial','TestimonialController@index')->name('backend.testimonial.index');
+Route::post('/back_end/testimonial-list','TestimonialController@list')->name('backend.testimonial.list');
+Route::post('/back_end/testimonial','TestimonialController@store')->name('backend.testimonial.store');
+Route::get('/back_end/testimonial-remove/{id}','TestimonialController@remove')->name('backend.testimonial.remove');
+/*Teacher Backend*/
+Route::get('/back_end/teacher','TeacherController@index')->name('backend.teacher.index');
+Route::post('/back_end/teacher-list','TeacherController@list')->name('backend.teacher.list');
+Route::post('/back_end/teacher','TeacherController@store')->name('backend.teacher.store');
+Route::get('/back_end/teacher-remove/{id}','TeacherController@remove')->name('backend.teacher.remove');
+/*Academic Backend*/
+Route::get('/back_end/academic','AcademicController@index')->name('backend.academic.index');
+Route::get('/back_end/academic/create','AcademicController@create')->name('backend.academic.create');
+Route::post('/back_end/academic-list','AcademicController@list')->name('backend.academic.list');
+Route::post('/back_end/academic','AcademicController@store')->name('backend.academic.store');
+Route::get('/back_end/academic-remove/{id}','AcademicController@remove')->name('backend.academic.remove');
 

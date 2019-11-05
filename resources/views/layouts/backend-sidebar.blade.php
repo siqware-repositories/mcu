@@ -28,46 +28,6 @@
                     <h6 class="mb-0 text-white text-shadow-dark">Victoria Baker</h6>
                     <span class="font-size-sm text-white text-shadow-dark">Santa Ana, CA</span>
                 </div>
-
-                <div class="sidebar-user-material-footer">
-                    <a href="#user-nav" class="d-flex justify-content-between align-items-center text-shadow-dark dropdown-toggle" data-toggle="collapse"><span>Navigation</span></a>
-                </div>
-            </div>
-
-            <div class="collapse" id="user-nav">
-                <ul class="nav nav-sidebar">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="icon-user-plus"></i>
-                            <span>My profile</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="icon-coins"></i>
-                            <span>My balance</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="icon-comment-discussion"></i>
-                            <span>Messages</span>
-                            <span class="badge bg-teal-400 badge-pill align-self-center ml-auto">58</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="icon-cog5"></i>
-                            <span>Account settings</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="icon-switch2"></i>
-                            <span>Logout</span>
-                        </a>
-                    </li>
-                </ul>
             </div>
         </div>
         <!-- /user menu -->
@@ -79,12 +39,6 @@
 
                 <!-- Main -->
                 <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">Main</div> <i class="icon-menu" title="Main"></i></li>
-                <li class="nav-item">
-                    <a href="../full/index.html" class="nav-link">
-                        <i class="icon-home4"></i>
-                        <span>Home</span>
-                    </a>
-                </li>
                 <li class="nav-item">
                     <a href="{{route('backend.news.index')}}" class="nav-link {{request()->is('back_end/news*')?'active':''}}">
                         <i class="icon-pencil"></i>
@@ -110,16 +64,21 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('setting.index')}}" class="nav-link {{request()->is('back_end/setting*')?'active':''}}">
-                        <i class="icon-cog"></i>
-                        <span>Setting</span>
+                    <a href="{{route('backend.testimonial.index')}}" class="nav-link {{request()->is('back_end/testimonial*')?'active':''}}">
+                        <i class="icon-quotes-left"></i>
+                        <span>Testimonial</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="../full/changelog.html" class="nav-link">
-                        <i class="icon-list-unordered"></i>
-                        <span>Changelog</span>
-                        <span class="badge bg-blue-400 align-self-center ml-auto">2.2</span>
+                    <a href="{{route('backend.academic.index')}}" class="nav-link {{request()->is('back_end/academic*')?'active':''}}">
+                        <i class="icon-graduation"></i>
+                        <span>Academic</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('backend.history.index')}}" class="nav-link {{request()->is('back_end/setting*')?'active':''}}">
+                        <i class="icon-cog"></i>
+                        <span>Setting</span>
                     </a>
                 </li>
                 <!-- /main -->

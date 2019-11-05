@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{asset('front/assets/plugins/flexslider/flexslider.css')}}">
     <!-- Theme CSS -->
     <link rel="stylesheet" href="{{asset('front/assets/css/theme-1.css')}}">
+    <link rel="stylesheet" href="{{asset('front/assets/css/custom.css')}}">
 </head>
 
 <body class="home-page">
@@ -34,5 +35,8 @@
 <script type="text/javascript" src="{{asset('front/assets/plugins/flexslider/jquery.flexslider-min.js')}}"></script>
 <script type="text/javascript" src="{{asset('front/assets/js/main.js')}}"></script>
 @stack('js')
+@yield('page-js')
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v5.0&appId=320540251744202&autoLogAppEvents=1"></script>
 </body>
 </html>

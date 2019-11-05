@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTestimonialsTable extends Migration
+class CreateAcademicDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,15 @@ class CreateTestimonialsTable extends Migration
      */
     public function up()
     {
-        Schema::create('testimonials', function (Blueprint $table) {
+        Schema::create('academic_details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->bigInteger('academic_id');
             $table->string('major');
-            $table->string('content');
-            $table->string('profile');
+            $table->bigInteger('course_id');
+            $table->bigInteger('schedule_id');
+            $table->bigInteger('teacher_id');
+            $table->bigInteger('document_id');
+            $table->longText('desc');
             $table->timestamps();
         });
     }
@@ -30,6 +33,6 @@ class CreateTestimonialsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('testimonials');
+        Schema::dropIfExists('academic_details');
     }
 }

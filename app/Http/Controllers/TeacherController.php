@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Testimonial;
+use App\Teacher;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
-class TestimonialController extends Controller
+class TeacherController extends Controller
 {
     /*list*/
     public function list(){
-        $testimonial = Testimonial::all();
-        return DataTables::of($testimonial)
+        $teachers = Teacher::all();
+        return DataTables::of($teachers)
             ->editColumn('profile',function ($profile){
                 return '<img src="'.$profile->profile.'" width="100" height="50"/>';
             })
@@ -21,7 +21,7 @@ class TestimonialController extends Controller
 												<i class="icon-menu9"></i>
 											</a>
 											<div class="dropdown-menu dropdown-menu-right py-0">
-												<a href="'.route('backend.testimonial.remove',$action->id).'" class="dropdown-item text-warning py-1"><i class="icon-database-remove"></i> Remove</a>
+												<a href="'.route('backend.teacher.remove',$action->id).'" class="dropdown-item text-warning py-1"><i class="icon-database-remove"></i> Remove</a>
 											</div>
 										</div>';
             })
@@ -30,7 +30,7 @@ class TestimonialController extends Controller
     }
     /*index*/
     public function index(){
-        return view('backend.testimonial.index');
+        return view('backend.teacher.index');
     }
     /*store*/
     public function store(Request $request){
@@ -40,22 +40,26 @@ class TestimonialController extends Controller
         }
         $request->validate([
             'name'=>'required',
-            'major'=>'required',
-            'content'=>'required',
+            'position'=>'required',
+            'tel'=>'required',
+            'email'=>'required',
+            'fb'=>'required',
             'file_path.*'=>'required',
         ]);
-        /*testimonial*/
-        Testimonial::create([
+        /*Teacher*/
+        Teacher::create([
             'name' => $input['name'],
-            'major' => $input['major'],
-            'content' => $input['content'],
+            'position' => $input['position'],
+            'tel' => $input['tel'],
+            'email' => $input['email'],
+            'fb' => $input['fb'],
             'profile' => $input['file_path'][0],
         ]);
         return redirect()->back();
     }
     /*remove*/
     public function remove($id){
-        Testimonial::findOrFail($id)->delete();
+        Teacher::findOrFail($id)->delete();
         return redirect()->back();
     }
 }
