@@ -17,7 +17,10 @@ class CreateAcademicDetailsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('academic_id');
             $table->string('major');
-            $table->longText('desc');
+            $table->longText('desc')->default('default text');
+            $table->longText('course')->default('default text');
+            $table->longText('schedule')->default('default text');
+            $table->longText('teacher')->default('default text');
             $table->timestamps();
         });
     }

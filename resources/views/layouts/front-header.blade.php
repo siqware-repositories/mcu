@@ -24,9 +24,8 @@
             </h1><!--//logo-->
             <div class="info col-md-8 col-12">
                 <ul class="menu-top float-right d-none d-md-block">
-                    <li class="divider"><a href="index.html">Home</a></li>
-                    <li class="divider"><a href="faq.html">FAQ</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li class="divider"><a href="{{route('front.home')}}">Home</a></li>
+                    <li><a href="{{route('front.contact')}}">Contact</a></li>
                 </ul><!--//menu-top-->
                 <br/>
                 <div class="contact float-right">
@@ -52,29 +51,17 @@
 
             <div class="navbar-collapse collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item"><a class="active nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html">News</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-1" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <i
-                                    class="fas fa-angle-down"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="course-single.html">Agriculture and Food Processing</a>
-                            <a class="dropdown-item" href="course-single-2.html">Management and Tourism</a>
-                            <a class="dropdown-item" href="course-single-2.html">Humanity, Art and Languages</a>
-                            <a class="dropdown-item" href="course-single-2.html">Science and Technology</a>
-                        </div><!--//dropdown-menu-->
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="index.html">MCU History</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html">Founder</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html">Event</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html">Forum</a></li>
-                    <li class="nav-item"><a class="nav-link" href="events.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="events.html">Video</a></li>
-                    <li class="nav-item"><a class="nav-link" href="events.html">Teacher</a></li>
-                    <li class="nav-item"><a class="nav-link" href="events.html">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="events.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="events.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link {{request()->is('/')?'active':''}}" href="{{route('front.home')}}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link {{request()->is('founder')?'active':''}}" href="{{route('front.founder')}}">Founder</a></li>
+                    <li class="nav-item"><a class="nav-link {{request()->is('academic*')?'active':''}}" href="{{route('front.academic')}}">Academic</a></li>
+                    <li class="nav-item"><a class="nav-link {{request()->is('news')?'active':''}}" href="{{route('front.news')}}">News</a></li>
+                    <li class="nav-item"><a class="nav-link {{request()->is('event')?'active':''}}" href="{{route('front.event')}}">Event</a></li>
+                    <li class="nav-item"><a class="nav-link " href="{{route('chatter.home')}}">Forum</a></li>
+                    <li class="nav-item"><a class="nav-link {{request()->is('gallery')?'active':''}}" href="{{route('front.gallery')}}">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link {{request()->is('video')?'active':''}}" href="{{route('front.video')}}">Video</a></li>
+                    <li class="nav-item"><a class="nav-link {{request()->is('staff')?'active':''}}" href="{{route('front.staff')}}">Staff</a></li>
+                    <li class="nav-item"><a class="nav-link {{request()->is('about')?'active':''}}" href="{{route('front.about')}}">About</a></li>
+                    <li class="nav-item"><a class="nav-link {{request()->is('contact')?'active':''}}" href="{{route('front.contact')}}">Contact</a></li>
                 </ul><!--//nav-->
             </div><!--//navabr-collapse-->
 

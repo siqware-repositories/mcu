@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Academic;
+use App\AcademicDetail;
 use App\Gallery;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -25,7 +26,7 @@ class FrontAcademicController extends Controller
         $corporations = Gallery::where('type','corporation')->first()->gallery_detail;
         return view('front.academic-show',compact(['corporations','academic']));
     }
-    /*show*/
+    /*add major*/
     public function add_major(Request $request,$id){
         $input = $request->all();
         $request->validate([
@@ -38,6 +39,59 @@ class FrontAcademicController extends Controller
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
+        return redirect()->back();
+    }
+    /*update home academic*/
+    public function update_home(Request $request,$id){
+        $input = $request->all();
+        $request->validate([
+            'content'=>'required'
+        ]);
+        $update = Academic::findOrFail($id);
+            $update->desc = $input['content'];
+            $update->save();
+        return redirect()->back();
+    }
+    /*update home academic detail*/
+    public function update_home_detail(Request $request,$id){
+        $input = $request->all();
+        $request->validate([
+            'content'=>'required'
+        ]);
+        $update = AcademicDetail::findOrFail($id);
+            $update->desc = $input['content'];
+            $update->save();
+        return redirect()->back();
+    }
+    /*store course*/
+    public function update_course(Request $request,$id){
+        $input = $request->all();
+        $request->validate([
+            'content'=>'required'
+        ]);
+        $update = AcademicDetail::findOrFail($id);
+        $update->course = $input['content'];
+        $update->save();
+        return redirect()->back();
+    }
+    public function update_schedule(Request $request,$id){
+        $input = $request->all();
+        $request->validate([
+            'content'=>'required'
+        ]);
+        $update = AcademicDetail::findOrFail($id);
+        $update->schedule = $input['content'];
+        $update->save();
+        return redirect()->back();
+    }
+    public function update_teacher(Request $request,$id){
+        $input = $request->all();
+        $request->validate([
+            'content'=>'required'
+        ]);
+        $update = AcademicDetail::findOrFail($id);
+        $update->teacher = $input['content'];
+        $update->save();
         return redirect()->back();
     }
 }

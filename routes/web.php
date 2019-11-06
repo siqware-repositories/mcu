@@ -34,6 +34,11 @@ Route::get('/contact', 'FrontContactController@index')->name('front.contact');
 Route::get('/staff', 'FrontTeacherController@index')->name('front.staff');
 Route::get('/academic', 'FrontAcademicController@index')->name('front.academic');
 Route::post('/academic-add-major/{id}', 'FrontAcademicController@add_major')->name('front.academic.major.add');
+Route::post('/academic-update-home/{id}', 'FrontAcademicController@update_home')->name('front.academic.update.home');
+Route::post('/academic-detail-update-home/{id}', 'FrontAcademicController@update_home_detail')->name('front.academic.detail.update.home');
+Route::post('/academic-detail-update-course/{id}', 'FrontAcademicController@update_course')->name('front.academic.detail.update.course');
+Route::post('/academic-detail-update-schedule/{id}', 'FrontAcademicController@update_schedule')->name('front.academic.detail.update.schedule');
+Route::post('/academic-detail-update-teacher/{id}', 'FrontAcademicController@update_teacher')->name('front.academic.detail.update.teacher');
 Route::get('/academic/{id}', 'FrontAcademicController@show')->name('front.academic.show');
 /*\Front*/
 Route::get('/home', 'HomeController@index')->name('home');
