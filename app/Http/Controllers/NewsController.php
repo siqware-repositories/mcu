@@ -7,6 +7,7 @@ use App\GalleryDetail;
 use App\News;
 use App\Rector;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Yajra\DataTables\DataTables;
 
 class NewsController extends Controller
@@ -49,31 +50,16 @@ class NewsController extends Controller
         $input = $request->all();
         if (!isset($input['file_thumb'][0]) && !isset($input['file_path'][0])){
             $input['file_thumb'][0] = '';
-            $input['file_path'][0] = '';
         }
         $request->validate([
             'file_thumb.*' =>'required',
-            'file_path.*' =>'required',
             'title' =>'required',
             'content' =>'required',
         ]);
-        /*gallery*/
-        $gallery = Gallery::create([
-            'user_id' => 1,
-            'title' => 'post gallery',
-            'type' => 'news',
-            'status' => true
-        ]);
-        foreach ($input['file_path'] as $file){
-            GalleryDetail::create([
-                'gallery_id'=>$gallery->id,
-                'path'=>$file
-            ]);
-        }
         /*post*/
         $news = News::create([
-            'gallery_id' =>$gallery->id,
-            'user_id' =>1,
+            'user_id' =>Auth::user()->id,
+            'academic_id' =>0,
             'thumb' =>$input['file_thumb'][0],
             'title' =>$input['title'],
             'content' =>$input['content'],

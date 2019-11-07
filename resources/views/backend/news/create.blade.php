@@ -57,12 +57,6 @@
                         <label>Content</label>
                         <textarea name="content" id="example" cols="30" rows="10"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label>Gallery</label>
-                        <div id="gallery" data-input="gallery" data-preview="gallery" style="margin-top:15px;max-height:100px;">
-                            <img src="{{asset('images/placeholder.png')}}" class="shadow" style="height: 5rem;">
-                        </div>
-                    </div>
             </div>
             <div class="card-footer bg-light">
                 <div class="form-group">
@@ -93,7 +87,6 @@
                 }
             });
             $('#lfm').filemanager('file');
-            $('#gallery').filemanager('file');
         })
     </script>
 @stop

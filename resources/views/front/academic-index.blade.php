@@ -5,7 +5,6 @@
 @section('page-content')
     <div class="content container page-wrapper">
         <header class="page-heading clearfix">
-            <h1 class="heading-title float-left">Academic</h1>
             <div class="breadcrumbs float-right">
                 <ul class="breadcrumbs-list">
                     <li class="breadcrumbs-label">You are here:</li>
@@ -16,26 +15,23 @@
         </header>
         <div class="page-content">
             <section class="widget p-2">
-                <h3 class="title">Bachelor Degree</h3>
-                <ul class="job-list custom-list-style">
+                <ul class="pl-0 custom-list-style">
                     @foreach($academics_bachelor as $item)
                         <li><i class="fas fa-caret-right"></i><a href="{{route('front.academic.show',$item->id)}}">{{$item->faculty}}</a></li>
                     @endforeach
                 </ul>
-                <h3 class="title">Associate Degree</h3>
-                <ul class="job-list custom-list-style">
+                <ul class="pl-0 custom-list-style">
                     @foreach($academics_associate as $item)
                         <li><i class="fas fa-caret-right"></i><a href="{{route('front.academic.show',$item->id)}}">{{$item->faculty}}</a></li>
                     @endforeach
                 </ul>
-                <h3 class="title">Master Degree</h3>
-                <ul class="job-list custom-list-style">
+                <h5 class="title">Graduate School</h5>
+                <ul class="pl-0 custom-list-style">
                     @foreach($academics_master as $item)
                         <li><i class="fas fa-caret-right"></i><a href="{{route('front.academic.show',$item->id)}}">{{$item->faculty}}</a></li>
                     @endforeach
                 </ul>
-                <h3 class="title">Doctor Degree</h3>
-                <ul class="job-list custom-list-style">
+                <ul class="pl-0 custom-list-style">
                     @foreach($academics_doctor as $item)
                         <li><i class="fas fa-caret-right"></i><a href="{{route('front.academic.show',$item->id)}}">{{$item->faculty}}</a></li>
                     @endforeach

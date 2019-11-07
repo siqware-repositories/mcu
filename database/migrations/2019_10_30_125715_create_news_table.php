@@ -15,8 +15,8 @@ class CreateNewsTable extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('gallery_id');
             $table->bigInteger('user_id');
+            $table->bigInteger('academic_id');
             $table->string('thumb')->default('images/placeholder.png');
             $table->string('title');
             $table->longText('content');

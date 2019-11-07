@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Academic;
 use App\AcademicDetail;
 use App\Gallery;
+use App\News;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class FrontAcademicController extends Controller
@@ -22,9 +24,10 @@ class FrontAcademicController extends Controller
     }
     /*show*/
     public function show($id){
+        $news = News::where('is_publish',true)->where('status',true)->where('academic_id',$id)->paginate(5);
         $academic = Academic::findOrFail($id);
         $corporations = Gallery::where('type','corporation')->first()->gallery_detail;
-        return view('front.academic-show',compact(['corporations','academic']));
+        return view('front.academic-show',compact(['corporations','academic','news']));
     }
     /*add major*/
     public function add_major(Request $request,$id){
@@ -93,5 +96,61 @@ class FrontAcademicController extends Controller
         $update->teacher = $input['content'];
         $update->save();
         return redirect()->back();
+    }
+    /*store news by academic*/
+    public function store_news(Request $request,$id){
+        $input = $request->all();
+        if (!isset($input['file_thumb'][0]) && !isset($input['file_path'][0])){
+            $input['file_thumb'][0] = '';
+        }
+        $request->validate([
+            'file_thumb.*' =>'required',
+            'title' =>'required',
+            'content' =>'required',
+        ]);
+        /*post*/
+        $news = News::create([
+            'user_id' =>Auth::user()->id,
+            'academic_id' =>$id,
+            'thumb' =>$input['file_thumb'][0],
+            'title' =>$input['title'],
+            'content' =>$input['content'],
+            'status' =>true,
+            'is_publish' =>false,
+        ]);
+        if ($news){
+            return redirect()->back();
+        }
+    }
+    public function news_remove($id){
+        $remove = News::findOrFail($id);
+        $remove->status = false;
+        $remove->save();
+        return redirect()->back();
+    }
+    public function news_edit($id){
+        $edit = News::findOrFail($id);
+        return view('front.edit-news',compact('edit'));
+    }
+    public function news_update(Request $request,$id){
+        $news = News::findOrFail($id);
+        $input = $request->all();
+        if (!isset($input['file_thumb'][0])){
+            $input['file_thumb'][0] = $news->thumb;
+        }
+        $request->validate([
+            'title' =>'required',
+            'content' =>'required',
+        ]);
+        /*post*/
+        $news->update([
+            'user_id' =>1,
+            'thumb' =>$input['file_thumb'][0],
+            'title' =>$input['title'],
+            'content' =>$input['content']
+        ]);
+        if ($news){
+            return redirect(route('front.academic'));
+        }
     }
 }

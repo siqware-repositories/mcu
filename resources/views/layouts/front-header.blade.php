@@ -52,15 +52,40 @@
             <div class="navbar-collapse collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="nav-item"><a class="nav-link {{request()->is('/')?'active':''}}" href="{{route('front.home')}}">Home</a></li>
-                    <li class="nav-item"><a class="nav-link {{request()->is('founder')?'active':''}}" href="{{route('front.founder')}}">Founder</a></li>
                     <li class="nav-item"><a class="nav-link {{request()->is('academic*')?'active':''}}" href="{{route('front.academic')}}">Academic</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-1" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About MCU <i
+                                    class="fas fa-angle-down"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="course-single.html">Founder</a>
+                            <a class="dropdown-item" href="course-single-2.html">Rector's Welcome message</a>
+                            <a class="dropdown-item" href="course-single-2.html">MCU's History</a>
+                            <a class="dropdown-item" href="course-single-2.html">Vision, Mission and Goal</a>
+                            <a class="dropdown-item" href="course-single-2.html">Board of MCU</a>
+                            <a class="dropdown-item" href="course-single-2.html">MCU's Organization Structure</a>
+                        </div><!--//dropdown-menu-->
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown-1" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Offices/Centers <i
+                                    class="fas fa-angle-down"></i></a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="course-single.html">Research and Development Office</a>
+                            <a class="dropdown-item" href="course-single.html">IQA Office</a>
+                            <a class="dropdown-item" href="course-single.html">ICT</a>
+                            <a class="dropdown-item" href="course-single.html">Account Office</a>
+                            <a class="dropdown-item" href="course-single.html">Administration Office</a>
+                            <a class="dropdown-item" href="course-single.html">Student Association Office</a>
+                        </div><!--//dropdown-menu-->
+                    </li>
                     <li class="nav-item"><a class="nav-link {{request()->is('news')?'active':''}}" href="{{route('front.news')}}">News</a></li>
-                    <li class="nav-item"><a class="nav-link {{request()->is('event')?'active':''}}" href="{{route('front.event')}}">Event</a></li>
                     <li class="nav-item"><a class="nav-link " href="{{route('chatter.home')}}">Forum</a></li>
                     <li class="nav-item"><a class="nav-link {{request()->is('gallery')?'active':''}}" href="{{route('front.gallery')}}">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link {{request()->is('video')?'active':''}}" href="{{route('front.video')}}">Video</a></li>
                     <li class="nav-item"><a class="nav-link {{request()->is('staff')?'active':''}}" href="{{route('front.staff')}}">Staff</a></li>
-                    <li class="nav-item"><a class="nav-link {{request()->is('about')?'active':''}}" href="{{route('front.about')}}">About</a></li>
+                    <li class="nav-item"><a class="nav-link {{request()->is('event')?'active':''}}" href="{{route('front.event')}}">Event</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Library</a></li>
                     <li class="nav-item"><a class="nav-link {{request()->is('contact')?'active':''}}" href="{{route('front.contact')}}">Contact</a></li>
                 </ul><!--//nav-->
             </div><!--//navabr-collapse-->

@@ -39,6 +39,10 @@ Route::post('/academic-detail-update-home/{id}', 'FrontAcademicController@update
 Route::post('/academic-detail-update-course/{id}', 'FrontAcademicController@update_course')->name('front.academic.detail.update.course');
 Route::post('/academic-detail-update-schedule/{id}', 'FrontAcademicController@update_schedule')->name('front.academic.detail.update.schedule');
 Route::post('/academic-detail-update-teacher/{id}', 'FrontAcademicController@update_teacher')->name('front.academic.detail.update.teacher');
+Route::post('/academic-add-news/{id}', 'FrontAcademicController@store_news')->name('front.academic.store.news');
+Route::get('/academic-remove-news/{id}', 'FrontAcademicController@news_remove')->name('front.academic.remove.news');
+Route::get('/academic-edit-news/{id}', 'FrontAcademicController@news_edit')->name('front.academic.edit.news');
+Route::post('/academic-update-news/{id}', 'FrontAcademicController@news_update')->name('front.academic.update.news');
 Route::get('/academic/{id}', 'FrontAcademicController@show')->name('front.academic.show');
 /*\Front*/
 Route::get('/home', 'HomeController@index')->name('home');
