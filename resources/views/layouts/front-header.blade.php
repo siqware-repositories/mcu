@@ -58,12 +58,12 @@
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About MCU <i
                                     class="fas fa-angle-down"></i></a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="course-single.html">Founder</a>
-                            <a class="dropdown-item" href="course-single-2.html">Rector's Welcome message</a>
-                            <a class="dropdown-item" href="course-single-2.html">MCU's History</a>
-                            <a class="dropdown-item" href="course-single-2.html">Vision, Mission and Goal</a>
-                            <a class="dropdown-item" href="course-single-2.html">Board of MCU</a>
-                            <a class="dropdown-item" href="course-single-2.html">MCU's Organization Structure</a>
+                            <a class="dropdown-item" href="{{route('front.founder')}}">Founder</a>
+                            <a class="dropdown-item" href="{{route('front.rector.show')}}">Rector's Welcome message</a>
+                            <a class="dropdown-item" href="{{route('front.about')}}">MCU's History</a>
+                            <a class="dropdown-item" href="{{route('front.commitment.show')}}">Vision, Mission and Goal</a>
+                            <a class="dropdown-item" href="#">Board of MCU</a>
+                            <a class="dropdown-item" href="#">MCU's Organization Structure</a>
                         </div><!--//dropdown-menu-->
                     </li>
                     <li class="nav-item dropdown">
@@ -71,12 +71,15 @@
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Offices/Centers <i
                                     class="fas fa-angle-down"></i></a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="course-single.html">Research and Development Office</a>
+                            @foreach($offices as $item)
+                                <a class="dropdown-item" href="{{route('front.office.show',$item->id)}}">{{$item->office}}</a>
+                            @endforeach
+                            {{--<a class="dropdown-item" href="course-single.html">Research and Development Office</a>
                             <a class="dropdown-item" href="course-single.html">IQA Office</a>
                             <a class="dropdown-item" href="course-single.html">ICT</a>
                             <a class="dropdown-item" href="course-single.html">Account Office</a>
                             <a class="dropdown-item" href="course-single.html">Administration Office</a>
-                            <a class="dropdown-item" href="course-single.html">Student Association Office</a>
+                            <a class="dropdown-item" href="course-single.html">Student Association Office</a>--}}
                         </div><!--//dropdown-menu-->
                     </li>
                     <li class="nav-item"><a class="nav-link {{request()->is('news')?'active':''}}" href="{{route('front.news')}}">News</a></li>

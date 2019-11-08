@@ -23,7 +23,10 @@ Route::get('/back_end', function () {
 Auth::routes();
 /*Front*/
 Route::get('/', 'FrontHomeController@index')->name('front.home');
+Route::get('/rector-welcome', 'FrontHomeController@rector_show')->name('front.rector.show');
+Route::get('/commitment', 'FrontHomeController@commitment_show')->name('front.commitment.show');
 Route::get('/news', 'FrontNewsController@index')->name('front.news');
+Route::get('/news/{id}', 'FrontNewsController@show')->name('front.news.show');
 Route::get('/event', 'FrontEventController@index')->name('front.event');
 Route::get('/video', 'FrontVideoController@index')->name('front.video');
 Route::get('/gallery', 'FrontGalleryController@index')->name('front.gallery');
@@ -44,6 +47,11 @@ Route::get('/academic-remove-news/{id}', 'FrontAcademicController@news_remove')-
 Route::get('/academic-edit-news/{id}', 'FrontAcademicController@news_edit')->name('front.academic.edit.news');
 Route::post('/academic-update-news/{id}', 'FrontAcademicController@news_update')->name('front.academic.update.news');
 Route::get('/academic/{id}', 'FrontAcademicController@show')->name('front.academic.show');
+Route::get('/office/{id}', 'FrontOfficeController@show')->name('front.office.show');
+Route::post('/office-add-news/{id}', 'FrontOfficeController@store_news')->name('front.office.store.news');
+Route::get('/office-remove-news/{id}', 'FrontOfficeController@news_remove')->name('front.office.remove.news');
+Route::get('/office-edit-news/{id}', 'FrontOfficeController@news_edit')->name('front.office.edit.news');
+Route::post('/office-update-news/{id}', 'FrontOfficeController@news_update')->name('front.office.update.news');
 /*\Front*/
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/back_end/setting', 'SettingController');
@@ -104,4 +112,13 @@ Route::get('/back_end/academic/create','AcademicController@create')->name('backe
 Route::post('/back_end/academic-list','AcademicController@list')->name('backend.academic.list');
 Route::post('/back_end/academic','AcademicController@store')->name('backend.academic.store');
 Route::get('/back_end/academic-remove/{id}','AcademicController@remove')->name('backend.academic.remove');
-
+/*Office backend*/
+Route::get('/back_end/office','OfficeController@index')->name('backend.office.index');
+Route::get('/back_end/office/create','OfficeController@create')->name('backend.office.create');
+Route::post('/back_end/office-list','OfficeController@list')->name('backend.office.list');
+Route::post('/back_end/office','OfficeController@store')->name('backend.office.store');
+Route::get('/back_end/office-remove/{id}','OfficeController@remove')->name('backend.office.remove');
+/*User Backend*/
+Route::resource('/back_end/user','UserController');
+Route::get('/back_end/user-list','UserController@list')->name('user.list');
+Route::get('/back_end/user-inactive/{id}','UserController@inactive')->name('user.inactive');

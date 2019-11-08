@@ -76,6 +76,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('backend.office.index')}}" class="nav-link {{request()->is('back_end/office*')?'active':''}}">
+                        <i class="icon-office"></i>
+                        <span>Office</span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{route('backend.teacher.index')}}" class="nav-link {{request()->is('back_end/staff*')?'active':''}}">
                         <i class="icon-people"></i>
                         <span>Staff</span>

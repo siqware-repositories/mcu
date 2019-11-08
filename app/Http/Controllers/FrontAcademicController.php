@@ -10,6 +10,8 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class FrontAcademicController extends Controller
 {
@@ -19,14 +21,13 @@ class FrontAcademicController extends Controller
         $academics_associate = Academic::where('status',true)->where('type','Associate')->get();
         $academics_master = Academic::where('status',true)->where('type','Master')->get();
         $academics_doctor = Academic::where('status',true)->where('type','Doctor')->get();
-        $corporations = Gallery::where('type','corporation')->first()->gallery_detail;
+
         return view('front.academic-index',compact(['corporations','academics_bachelor','academics_associate','academics_master','academics_doctor']));
     }
     /*show*/
     public function show($id){
-        $news = News::where('is_publish',true)->where('status',true)->where('academic_id',$id)->paginate(5);
+        $news = News::where('is_publish',true)->where('status',true)->where('academic_id',$id)->where('type','academic')->paginate(5);
         $academic = Academic::findOrFail($id);
-        $corporations = Gallery::where('type','corporation')->first()->gallery_detail;
         return view('front.academic-show',compact(['corporations','academic','news']));
     }
     /*add major*/
@@ -112,6 +113,7 @@ class FrontAcademicController extends Controller
         $news = News::create([
             'user_id' =>Auth::user()->id,
             'academic_id' =>$id,
+            'type' =>'academic',
             'thumb' =>$input['file_thumb'][0],
             'title' =>$input['title'],
             'content' =>$input['content'],
@@ -150,7 +152,7 @@ class FrontAcademicController extends Controller
             'content' =>$input['content']
         ]);
         if ($news){
-            return redirect(route('front.academic'));
+            return Redirect::to($request->request->get('http_referrer'));
         }
     }
 }

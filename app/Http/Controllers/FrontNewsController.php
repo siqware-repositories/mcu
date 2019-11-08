@@ -11,8 +11,11 @@ class FrontNewsController extends Controller
     /*index*/
     public function index(){
         $news = News::where('is_publish',true)->paginate(6);
-        $news_latest = News::where('is_publish',true)->limit(4)->latest()->get();
-        $corporations = Gallery::where('type','corporation')->first()->gallery_detail;
         return view('front.news-index',compact(['corporations','news_latest','news']));
+    }
+    /*show*/
+    public function show($id){
+        $show = News::where('is_publish',true)->where('status',true)->where('id',$id)->first();
+        return view('front.news-show',compact('show'));
     }
 }

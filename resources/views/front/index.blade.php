@@ -8,7 +8,7 @@
         <section class="section-content pt-3">
             <div class="row">
                 <div class="col-lg-6 col-12">
-                    <h4 class="title"><a href="news-single.html">{{$rector->title}}</a></h4>
+                    <h4 class="title"><a href="{{route('front.rector.show')}}">{{$rector->title}}</a></h4>
                     <div class="desc">
                         <div class="show-less">
                             {!! $rector->content !!}
@@ -69,7 +69,7 @@
                             <div class="row">
                                 @foreach($news as $item)
                                 <div class="col-lg-4 col-12 news-item">
-                                    <h2 class="title"><a href="news-single.html">{{$item->title}}</a></h2>
+                                    <h2 class="title"><a href="{{route('front.news.show',$item->id)}}">{{$item->title}}</a></h2>
                                     <img class="thumb" src="{{$item->thumb}}" width="100" alt=""/>
                                     <div class="desc">
                                         <div class="show-less">
