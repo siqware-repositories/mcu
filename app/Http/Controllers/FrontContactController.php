@@ -12,6 +12,6 @@ class FrontContactController extends Controller
     public function index(){
 
 
-        return view('front.contact-index',compact(['corporations','news_latest']));
+        return view('front.contact-index',compact(['corporations']));
     }
 }

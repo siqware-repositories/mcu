@@ -11,7 +11,7 @@ class FrontNewsController extends Controller
     /*index*/
     public function index(){
         $news = News::where('is_publish',true)->paginate(6);
-        return view('front.news-index',compact(['corporations','news_latest','news']));
+        return view('front.news-index',compact(['corporations','news']));
     }
     /*show*/
     public function show($id){

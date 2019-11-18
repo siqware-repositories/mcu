@@ -14,6 +14,6 @@ class FrontAboutController extends Controller
         $about = History::first();
 
 
-        return view('front.about-index',compact(['corporations','news_latest','about']));
+        return view('front.about-index',compact(['corporations','about']));
     }
 }

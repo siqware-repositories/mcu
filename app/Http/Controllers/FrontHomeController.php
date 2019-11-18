@@ -22,7 +22,7 @@ class FrontHomeController extends Controller
         $news = News::where('is_publish',true)->limit(3)->get();
 
         $rector = Rector::first();
-        return view('front.index',compact(['rector','news','news_latest','events','videos','galleries','testimonials_one','testimonials_two','corporations']));
+        return view('front.index',compact(['rector','news','events','videos','galleries','testimonials_one','testimonials_two']));
     }
     /*rector show*/
     public function rector_show(){
