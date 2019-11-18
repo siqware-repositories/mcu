@@ -14,6 +14,6 @@ class FrontTeacherController extends Controller
         $staffs = Teacher::paginate(6);
 
 
-        return view('front.teacher-index',compact(['corporations','staffs']));
+        return view('front.teacher-index',compact(['staffs']));
     }
 }

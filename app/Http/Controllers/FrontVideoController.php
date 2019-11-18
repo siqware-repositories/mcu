@@ -14,6 +14,6 @@ class FrontVideoController extends Controller
         $videos = Video::paginate(6);
 
 
-        return view('front.video-index',compact(['corporations','videos']));
+        return view('front.video-index',compact(['videos']));
     }
 }

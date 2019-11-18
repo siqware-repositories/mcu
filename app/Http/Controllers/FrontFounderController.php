@@ -14,6 +14,6 @@ class FrontFounderController extends Controller
         $founder = Founder::first();
 
 
-        return view('front.founder-index',compact(['corporations','founder']));
+        return view('front.founder-index',compact(['founder']));
     }
 }

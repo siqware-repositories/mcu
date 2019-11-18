@@ -13,7 +13,7 @@ class FrontOfficeController extends Controller
     public function show($id){
         $news = News::where('is_publish',true)->where('status',true)->where('academic_id',$id)->where('type','office')->paginate(5);
         $office = Office::findOrFail($id);
-        return view('front.office-show',compact(['corporations','office','news']));
+        return view('front.office-show',compact(['office','news']));
     }
     /*store news by academic*/
     public function store_news(Request $request,$id){

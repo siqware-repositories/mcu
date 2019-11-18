@@ -13,13 +13,13 @@ class FrontGalleryController extends Controller
         $galleries = Gallery::where('type','gallery')->paginate(6);
 
 
-        return view('front.gallery-index',compact(['corporations','galleries']));
+        return view('front.gallery-index',compact(['galleries']));
     }
     /*index*/
     public function show($id){
         $gallery_details = GalleryDetail::where('gallery_id',$id)->paginate(16);
 
 
-        return view('front.gallery-show',compact(['corporations','gallery_details']));
+        return view('front.gallery-show',compact(['gallery_details']));
     }
 }

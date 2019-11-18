@@ -22,13 +22,13 @@ class FrontAcademicController extends Controller
         $academics_master = Academic::where('status',true)->where('type','Master')->get();
         $academics_doctor = Academic::where('status',true)->where('type','Doctor')->get();
 
-        return view('front.academic-index',compact(['corporations','academics_bachelor','academics_associate','academics_master','academics_doctor']));
+        return view('front.academic-index',compact(['academics_bachelor','academics_associate','academics_master','academics_doctor']));
     }
     /*show*/
     public function show($id){
         $news = News::where('is_publish',true)->where('status',true)->where('academic_id',$id)->where('type','academic')->paginate(5);
         $academic = Academic::findOrFail($id);
-        return view('front.academic-show',compact(['corporations','academic','news']));
+        return view('front.academic-show',compact(['academic','news']));
     }
     /*add major*/
     public function add_major(Request $request,$id){

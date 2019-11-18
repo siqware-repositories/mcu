@@ -14,6 +14,6 @@ class FrontEventController extends Controller
         $events = Event::where('is_publish',true)->paginate(5);
 
 
-        return view('front.event-index',compact(['corporations','events']));
+        return view('front.event-index',compact(['events']));
     }
 }
